@@ -1,6 +1,5 @@
-import streamlit as st
-import json
 import requests
+import streamlit as st
 
 st.set_page_config(layout="wide", page_title="SCP Processing Request")
 
@@ -286,14 +285,15 @@ if submitted:
 
                 # Extract Output path if available
                 if "RASTER_OUTPUT" in result_data:
-                    st.write(f"Check AWS File Explorer for output raster")
+                    st.write("Check AWS File Explorer for output raster")
 
             else:
                 st.error(f"Server Error: {response.status_code}")
                 try:
                     st.json(response.json())
-                except:
+                except Exception as e:
                     st.text(response.text)
+                    print(f"error: {e}")
 
     except requests.exceptions.ConnectionError:
         st.error(
