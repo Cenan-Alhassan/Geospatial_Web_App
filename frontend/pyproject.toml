@@ -1,0 +1,19 @@
+[project]
+name = "frontend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "folium>=0.20.0",
+    "geopandas>=1.1.2",
+    "leafmap>=0.57.10",
+    "requests>=2.32.5",
+    "streamlit>=1.53.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.13",
+    "ty>=0.0.12",
+]
